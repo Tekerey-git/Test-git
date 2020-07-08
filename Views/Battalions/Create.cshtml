@@ -1,0 +1,76 @@
+﻿@model HistorySiteIdentity.ViewModels.CombatFormationViewModel;
+@{ Layout = @"~/Views/Shared/_Layout2.cshtml";}
+@{
+    ViewData["Title"] = "Создание";
+}
+
+<h1>Создание</h1>
+
+<h4>Батальон</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label">Наименование</label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Number" class="control-label">Номер</label>
+                <input asp-for="Number" class="form-control" />
+                <span asp-validation-for="Number" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TotalStrenght" class="control-label">Общая численность</label>
+                <input asp-for="TotalStrenght" class="form-control" />
+                <span asp-validation-for="TotalStrenght" class="text-danger"></span>
+            </div>
+            @*<div class="form-group">
+                    <label asp-for="RegimentId" class="control-label"></label>
+                    <select asp-for="RegimentId" class="form-control" asp-items="@ViewBag.regList">
+                        <option value="@null">--- Не выбрано ---</option>
+                    </select>
+                </div>*@
+            <div class="form-group">
+                <div class="form-group">
+                    <label asp-for="WeekId" class="control-label">Неделя</label>
+                    <select asp-for="WeekId" class="form-control" asp-items="@ViewBag.week">
+                        <option value="@null">--- Не выбрано ---</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="AdditionalInformation" class="control-label">Общая численность</label>
+                <input asp-for="AdditionalInformation" class="form-control" />
+                <span asp-validation-for="AdditionalInformation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <p>
+                    <label asp-for="File">Файл</label>
+                    <input asp-for="File" type="file" class="form-control" />
+                </p>
+            </div>
+            <div>
+                <label asp-for="Coordinates" class="control-label">Координаты</label>
+                <input id="geomapXY" asp-for="Coordinates" class="form-control" type="text" value="@null">
+            </div>
+            <div>
+                <label asp-for="Adress" class="control-label">Адрес (современный)</label>
+                <input id="Adress" asp-for="Adress" class="form-control" type="text" value="@null">
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Создать" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Вернуться к списку</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

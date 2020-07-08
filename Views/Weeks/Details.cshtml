@@ -1,0 +1,46 @@
+﻿@model HistorySiteIdentity.Models.Week
+
+@{
+    ViewData["Title"] = "Описание";
+}
+
+    <h1>Описание</h1>
+
+<div>
+    <h4>Неделя</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Номер недели
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.WeekNumber)
+        </dd>
+        <dt class = "col-sm-2">
+            Дата начала недели
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Data)
+        </dd>
+    </dl>
+</div>
+
+<div>
+    <p>Соединения, относящиеся к этой неделе:</p>
+    <ul>
+       @foreach(BattleFront b in Model.BattleFronts)
+       {
+        <li>
+            @b.Name  
+    <a asp-controller="BattleFronts" asp-action="Edit" asp-route-id="@b.BattleFrontId" target="_blank">Редактирование</a> |
+    <a asp-controller="BattleFronts" asp-action="Details" asp-route-id="@b.BattleFrontId" target="_blank">Описание</a> |
+    <a asp-controller="BattleFronts" asp-action="Delete" asp-route-id="@b.BattleFrontId" target="_blank">Удаление</a>
+
+        </li>       
+        }
+    </ul>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.WeekId">Edit</a> |
+    <a asp-action="Index">Вернуться к списку</a>
+</div>

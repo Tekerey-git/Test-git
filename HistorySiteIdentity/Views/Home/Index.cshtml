@@ -1,0 +1,40 @@
+﻿@{ 
+    Layout = @"~/Views/Shared/_Layout3.cshtml";
+}
+@{
+    ViewData["Title"] = "Титульная";
+}
+
+<!DOCTYPE HTML>
+
+<html>
+<head>
+    <title>Страница приветствия</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="~/assets/css/main.css" />
+</head>
+<body class="is-preload">
+
+    <!-- Header -->
+    <header id="header">
+        <h1>Исторический сайт v0.9</h1>
+        <p>
+            Добро пожаловать на страницу приветствия исторического сайта о Великой Отечественной войне 1941-1945 годов.
+        </p>
+    </header>
+
+    <!-- Signup Form -->
+    <div>
+        <a asp-controller="Home" asp-action="mainIndex" class="button">Перейти!</a>
+    </div>
+
+ 
+    
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>
+

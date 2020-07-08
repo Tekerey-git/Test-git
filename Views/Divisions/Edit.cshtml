@@ -1,0 +1,123 @@
+﻿@model HistorySiteIdentity.ViewModels.CombatFormationViewModel;
+@{ Layout = @"~/Views/Shared/_Layout2.cshtml";}
+
+@{
+    ViewData["Title"] = "Редактирование";
+}
+
+<h1>Редактирование</h1>
+
+<h4>Дивизия</h4>
+<hr />
+<div class="row">
+    <dl class="subInfo">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CoordX)
+        </dt>
+        <dd id="geomapX" class="col-sm-10">
+            @Html.DisplayFor(model => model.CoordX)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CoordY)
+        </dt>
+        <dd id="geomapY" class="col-sm-10">
+            @Html.DisplayFor(model => model.CoordY)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd id="Name" class="col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Week.WeekNumber)
+        </dt>
+        <dd id="Week" class="col-sm-10">
+            @Html.DisplayFor(model => model.Week.WeekNumber)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Adress)
+        </dt>
+        <dd id="Adress1" class="col-sm-10">
+            @Html.DisplayFor(model => model.Adress)
+        </dd>
+    </dl>
+    <div class="col-md-4">
+        <form asp-action="Edit" method="post" enctype="multipart/form-data">
+            <input type="hidden" asp-for="Image" />
+            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="OldWeekId" />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="DivisionId" />
+            <div class="form-group">
+                <label asp-for="Name" class="control-label">Наименование</label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Number" class="control-label">Номер</label>
+                <input asp-for="Number" class="form-control" />
+                <span asp-validation-for="Number" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TotalStrenght" class="control-label">Общая численность</label>
+                <input asp-for="TotalStrenght" class="form-control" />
+                <span asp-validation-for="TotalStrenght" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CorpsId" class="control-label">Корпус</label>
+                <select asp-for="CorpsId" class="form-control" asp-items="@ViewBag.corpusList">
+                    <option value="@null">--- Не выбрано ---</option>
+                </select>
+                <span asp-validation-for="CorpsId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WeekId" class="control-label">Неделя</label>
+                <select asp-for="WeekId" class="form-control" asp-items="@ViewBag.week">
+                    <option value="@null">--- Не выбрано ---</option>
+                </select>
+                <span asp-validation-for="WeekId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AdditionalInformation" class="control-label">Дополнительная информация</label>
+                <input asp-for="AdditionalInformation" class="form-control" />
+                <span asp-validation-for="AdditionalInformation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <p>
+                    <label asp-for="File">Файл</label>
+                    <input asp-for="File" type="file" class="form-control" />
+                </p>
+            </div>
+            <div>
+                @if (Model.Image != null)
+                {
+                    <img style='width:180px; height:220px;' src="data:image/jpeg;base64,@(Convert.ToBase64String(Model.Image))" />
+                }
+            </div>
+            <div>
+                <label asp-for="Coordinates" class="control-label">Координаты</label>
+                <input id="geomapXY" asp-for="Coordinates" class="form-control" type="text">
+                <span asp-validation-for="Coordinates" class="text-danger"></span>
+            </div>
+            <div>
+                <label asp-for="Adress" class="control-label">Адрес (современный)</label>
+                <input id="Adress" asp-for="Adress" class="form-control" type="text">
+                <span asp-validation-for="Adress" class="text-danger"></span>
+
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Принять изменения" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Вернуться к списку</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

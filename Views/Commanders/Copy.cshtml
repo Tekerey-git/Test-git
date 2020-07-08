@@ -1,0 +1,121 @@
+﻿@model HistorySiteIdentity.ViewModels.CommanderViewModel
+
+@{
+    ViewData["Title"] = "Copy";
+}
+
+<h1>Copy</h1>
+
+
+<h4>Commander</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Copy" method="post" enctype="multipart/form-data">
+            <input type="hidden" asp-for="Image" />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Surname" class="control-label"></label>
+                <input asp-for="Surname" class="form-control" />
+                <span asp-validation-for="Surname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Paronymic" class="control-label"></label>
+                <input asp-for="Paronymic" class="form-control" />
+                <span asp-validation-for="Paronymic" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateOfBirth" class="control-label"></label>
+                <input asp-for="DateOfBirth" class="form-control" />
+                <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Position" class="control-label"></label>
+                <input asp-for="Position" class="form-control" />
+                <span asp-validation-for="Position" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AdditionalInformation" class="control-label"></label>
+                <input asp-for="AdditionalInformation" class="form-control" />
+                <span asp-validation-for="AdditionalInformation" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="WeekId" class="control-label"></label>
+                <select asp-for="WeekId" class="form-control" asp-items="@ViewBag.weeks">
+                    <option value="@null">--- Не выбрано ---</option>
+                </select>
+            </div>
+            <div>
+                <p>
+                    <label asp-for="File">File</label>
+                    <input asp-for="File" type="file" class="form-control" />
+                </p>
+            </div>
+            <div>
+                @if (Model.Image != null)
+                {
+                    <img style='width:180px; height:220px;' src="data:image/jpeg;base64,@(Convert.ToBase64String(Model.Image))" />
+                }
+            </div>
+            @*<div class="form-group">
+            <label asp-for="BattleFrontId" class="control-label"></label>
+            <select asp-for="BattleFrontId" class="form-control" asp-items="@ViewBag.Fronts">
+                <option value="@null">--- Не выбрано ---</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label asp-for="ArmyId" class="control-label"></label>
+            <select asp-for="ArmyId" class="form-control" asp-items="@ViewBag.Armies">
+                <option value="@null">--- Не выбрано ---</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label asp-for="CorpsId" class="control-label"></label>
+            <select asp-for="CorpsId" class="form-control" asp-items="@ViewBag.corpusList">
+                <option value="@null">--- Не выбрано ---</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label asp-for="DivisionId" class="control-label"></label>
+            <select asp-for="DivisionId" class="form-control" asp-items="@ViewBag.divList">
+                <option value="@null">--- Не выбрано ---</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label asp-for="BrigadeId" class="control-label"></label>
+            <select asp-for="BrigadeId" class="form-control" asp-items="@ViewBag.BrigadeId">
+                <option value="@null">--- Не выбрано ---</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label asp-for="RegimentId" class="control-label"></label>
+            <select asp-for="RegimentId" class="form-control" asp-items="@ViewBag.regList">
+                <option value="@null">--- Не выбрано ---</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label asp-for="BattalionId" class="control-label"></label>
+            <select asp-for="BattalionId" class="form-control" asp-items="@ViewBag.battalionList">
+                <option value="@null">--- Не выбрано ---</option>
+            </select>
+        </div>*@
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,42 @@
+﻿@model IEnumerable<HistorySiteIdentity.Models.Week>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Список</h1>
+
+<p>
+    <a asp-action="Create">Создание</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+               Номер недели
+            </th>
+            <th>
+               Дата начала недели
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr class="trMod">
+            <td>
+                @Html.DisplayFor(modelItem => item.WeekNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Data)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.WeekId">Редактирование</a> |
+                <a asp-action="Details" asp-route-id="@item.WeekId">Описание</a> |
+                <a asp-action="Delete" asp-route-id="@item.WeekId">Удаление</a> |
+                <a asp-action="Copy" asp-route-id="@item.WeekId">Копирование</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

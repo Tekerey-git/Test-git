@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="HistorySiteIdentity.Models.Army" Collapsed="true">
+    <Position X="6" Y="2.25" Width="3.25" />
+    <AssociationLine Name="BattleFront" Type="HistorySiteIdentity.Models.BattleFront">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-8.038" Y="0.769" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Week" Type="HistorySiteIdentity.Models.Week" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6" Y="2.531" />
+        <Point X="5.689" Y="2.531" Type="JumpStart" />
+        <Point X="5.522" Y="2.531" Type="JumpEnd" />
+        <Point X="4.5" Y="2.531" />
+        <Point X="4.5" Y="3" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-11.081" Y="0.386" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>CEAAQAAAAAAAAAAAQGAACAYAABgAIBAAQAAAAIAAIEA=</HashCode>
+      <FileName>Models\Army.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="BattleFront" />
+      <Property Name="Week" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="HistorySiteIdentity.Models.BattleFront" Collapsed="true">
+    <Position X="5.5" Y="1.5" Width="3.75" />
+    <AssociationLine Name="Week" Type="HistorySiteIdentity.Models.Week" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="5.5" Y="1.75" />
+        <Point X="4.062" Y="1.75" />
+        <Point X="4.062" Y="3" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-11.2" Y="0.637" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>CEAAAgAAAAAAAAAAQAAACAQAAAgAABAAQAAAAIAAAEA=</HashCode>
+      <FileName>Models\BattleFront.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Week" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="HistorySiteIdentity.Models.Brigade" Collapsed="true">
+    <Position X="7.25" Y="4.5" Width="2" />
+    <AssociationLine Name="Division" Type="HistorySiteIdentity.Models.Division">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-7.559" Y="0.493" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Week" Type="HistorySiteIdentity.Models.Week">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-11.009" Y="-0.118" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Army" Type="HistorySiteIdentity.Models.Army">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-8.9" Y="1.14" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>CEAAACAAAAAAAAAAQGAIAAQAABgAoBAAQQAAAIABIUA=</HashCode>
+      <FileName>Models\Brigade.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Division" />
+      <Property Name="Week" />
+      <Property Name="Army" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="HistorySiteIdentity.Models.Commander" Collapsed="true">
+    <Position X="3.25" Y="0.75" Width="8.25" />
+    <AssociationLine Name="Army" Type="HistorySiteIdentity.Models.Army">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="5.235" Y="0.865" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Battalion" Type="HistorySiteIdentity.Models.Battalion">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="5.249" Y="1.497" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="BattleFront" Type="HistorySiteIdentity.Models.BattleFront">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-8.168" Y="-0.802" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Brigade" Type="HistorySiteIdentity.Models.Brigade">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="6.649" Y="0.362" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Corps" Type="HistorySiteIdentity.Models.Corps">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="6.637" Y="0.769" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Division" Type="HistorySiteIdentity.Models.Division">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="5.906" Y="0.469" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Week" Type="HistorySiteIdentity.Models.Week">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-11.558" Y="1.521" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Regiment" Type="HistorySiteIdentity.Models.Regiment">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="5.956" Y="1.138" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAgQCAIDAYQBBAQoBAAAQAAAIABIwI=</HashCode>
+      <FileName>Models\Commander.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Army" />
+      <Property Name="Battalion" />
+      <Property Name="BattleFront" />
+      <Property Name="Brigade" />
+      <Property Name="Corps" />
+      <Property Name="Division" />
+      <Property Name="Week" />
+      <Property Name="Regiment" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="HistorySiteIdentity.Models.Corps" Collapsed="true">
+    <Position X="6.5" Y="3" Width="2.75" />
+    <AssociationLine Name="Army" Type="HistorySiteIdentity.Models.Army">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-7.667" Y="0.014" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="BattleFront" Type="HistorySiteIdentity.Models.BattleFront">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-10.146" Y="0.278" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Week" Type="HistorySiteIdentity.Models.Week">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.058" Y="-9.068" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>CEAAQCAAAAAAAAAIQEAIAAYAABgAoBAAQAAAAIAAIUA=</HashCode>
+      <FileName>Models\Corps.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Army" />
+      <Property Name="BattleFront" />
+      <Property Name="Week" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="HistorySiteIdentity.Models.Division" Collapsed="true">
+    <Position X="7" Y="3.75" Width="2.25" />
+    <AssociationLine Name="Army" Type="HistorySiteIdentity.Models.Army">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-9.128" Y="-0.094" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Corps" Type="HistorySiteIdentity.Models.Corps">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-7.691" Y="0.829" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Week" Type="HistorySiteIdentity.Models.Week">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.072" Y="6.746" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>CEAAQAAAAAAAAAAAQGAIAAQAAAgAoBAAQAAAAIABIUA=</HashCode>
+      <FileName>Models\Division.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Army" />
+      <Property Name="Corps" />
+      <Property Name="Week" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="HistorySiteIdentity.Models.Regiment" Collapsed="true">
+    <Position X="7.5" Y="5.25" Width="1.75" />
+    <AssociationLine Name="Brigade" Type="HistorySiteIdentity.Models.Brigade">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-6.936" Y="-0.705" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Week" Type="HistorySiteIdentity.Models.Week">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-12.374" Y="-0.537" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Division" Type="HistorySiteIdentity.Models.Division">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-8.002" Y="-0.561" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>CEAAACAACAAAAAAAQEAAAAQAABgAABAAQQAAAIABIkA=</HashCode>
+      <FileName>Models\Regiment.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Brigade" />
+      <Property Name="Week" />
+      <Property Name="Division" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="HistorySiteIdentity.Models.Week" Collapsed="true">
+    <Position X="3" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQiAAAAAEAAAAQCAIAAIAABAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Week.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HistorySiteIdentity.ViewModels.CombatFormationViewModel" Collapsed="true">
+    <Position X="1" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAACQiAACAAAAAAAQGAICAYQIBgEoBAAQQAAAIABI0I=</HashCode>
+      <FileName>ViewModels\CombatFormationViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HistorySiteIdentity.ViewModels.CommanderViewModel" Collapsed="true">
+    <Position X="1" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgQAAADAQABAAUoBAAAQAAAAABIgI=</HashCode>
+      <FileName>ViewModels\CommanderViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HistorySiteIdentity.Models.Battalion" Collapsed="true">
+    <Position X="7.75" Y="6" Width="1.5" />
+    <AssociationLine Name="Brigade" Type="HistorySiteIdentity.Models.Brigade">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-8.182" Y="-1.902" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Regiment" Type="HistorySiteIdentity.Models.Regiment">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-7.427" Y="-0.932" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Week" Type="HistorySiteIdentity.Models.Week">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-11.979" Y="0.757" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>CEAAAAAACAAAAAAAQEAIAAQAAAgAABAAQQAAAIAAIkI=</HashCode>
+      <FileName>Models\Battalion.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Brigade" />
+      <Property Name="Regiment" />
+      <Property Name="Week" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

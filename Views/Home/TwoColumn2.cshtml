@@ -1,0 +1,223 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Структура войск</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="~/assets2/css/main.min.css" />
+    <link rel="stylesheet" href="~/assets2/css/main.css" />
+</head>
+<body class="subpage">
+    <div id="page-wrapper">
+
+        <!-- Header -->
+        <section id="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+
+                        <!-- Logo -->
+                        <h1><a  asp-controller="Home" asp-action="Index" id="logo">Приветствие</a></h1>
+
+                        <!-- Nav -->
+                        <nav id="nav">
+                            <a asp-controller="Home" asp-action="MainIndex">Главная</a>
+                            <a asp-controller="Home" asp-action="ThreeColumn">Военные части</a>
+                            <a asp-controller="Home" asp-action="TwoColumn1">О проекте</a>
+                            <a asp-controller="Home" asp-action="OneColumn">Памятка</a>
+                        </nav>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content -->
+        <section id="content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-3 col-12-medium">
+
+                        <!-- Sidebar -->
+                        <section>
+                            <header>
+                                <h2>Ресурсы-первоисточники</h2>
+                            </header>
+                            <ul class="link-list">
+                                <li><a href="http://istmat.info/node/26049">Штатная структура соединений и частей РККА на 22 июня 1941 г.</a></li>
+                                <li><a href="http://army.armor.kiev.ua/hist/ierarx.shtml">Иерархия воинских формирований</a></li>
+                                <li><a href="http://www.soldat.ru/force/sssr/t/table6.html">Состав стрелковых, горнострелковых, мотострелковых,
+                                    моторизованных дивизий и бригад РККА и их дислокация на 22 июня 1941 г.</a></li>
+                            </ul>
+                        </section>
+                        
+
+                    </div>
+                    <div class="col-9 col-12-medium imp-medium">
+
+                        <!-- Main Content -->
+                        <section>
+                            <header>
+                                <h2>Структура войск</h2>
+                                <h3>Особенности родов войск</h3>
+                            </header>
+                            <ul class="link-list">
+                                <li>
+                                    <a asp-controller="Weeks" asp-action="Index" class="centerList button-for-forces "><h3>Недели</h3></a>
+                                    <p>
+                                        <strong>Неделя</strong> - это основная категория для всех последующих. Так, каждая воинская часть привязана к
+                                        определённому промежутку времени. И этот промежуток времени определяется именно объектом <strong>Неделя</strong>.
+                                    </p>
+                                </li>
+                                <li>
+                                    <a asp-controller="BattleFronts" asp-action="Index" class="button-for-forces "><h3>Фронты</h3></a>
+                                    <p>
+                                        <strong>Фронт</strong>  - эта глобальная боевая единица, может иметь только армии и командиров (высшее командование фронтом).
+                                    </p>
+                                </li>
+                                <li>
+                                    <a asp-controller="Armies" asp-action="Index" class="button-for-forces "><h3>Армии</h3></a>
+                                    <p>
+                                        <strong>Армия</strong>  - эта глобальная боевая единица, может иметь как корпуса, так и отдельные дивизии.
+                                        Отдельная дивизия ВВС может находиться в прямом подчинении армии.
+                                    </p>
+                                </li>
+                                <li>
+                                    <a asp-controller="Corps" asp-action="Index" class="button-for-forces "><h3>Корпуса</h3></a>
+                                    <p>
+                                        <strong>Корпус</strong>  - эта боевая единица, может иметь как дивизии, так и отдельные бригады.
+                                        Артиллерия и ВВС не имеют корпусов.
+                                        Отдельная дивизия ВВС может находиться в прямом подчинении армии.
+                                        Отдельная артиллерийская бригада может находиться в подчинении корпуса.
+                                    </p>
+                                </li>
+                                <li>
+                                    <a asp-controller="Divisions" asp-action="Index" class="button-for-forces "><h3>Дивизии</h3></a>
+                                    <p>
+                                        <strong>Дивизия</strong>  - эта боевая единица, может иметь как бригады, так и отдельные полки.
+                                        Артиллерия и ВДВ не имеют дивизий.
+                                        Отдельная дивизия ВВС может находиться в прямом подчинении армии.
+                                    </p>
+                                </li>
+                                <li>
+                                    <a asp-controller="Brigades" asp-action="Index" class="button-for-forces "><h3>Бригады</h3></a>
+                                    <p>
+                                        <strong>Бригады</strong>  - эта боевая единица, может иметь как полки, так и отдельные батальоны.
+                                        Кавалерия не имеют бригад.
+                                        Отдельная бригада ВДВ может находиться в прямом подчинении корпуса.
+                                    </p>
+                                </li>
+                                <li>
+                                    <a asp-controller="Regiments" asp-action="Index" class="button-for-forces "><h3>Полки</h3></a>
+                                    <p>
+                                        <strong>Полки</strong>  - эта боевая единица, может иметь только батальоны.
+                                        ВДВ не имеет полков.
+                                        Отдельный полк кавалерии может находиться в прямом подчинении дивизии.
+                                    </p>
+                                </li>
+                                <li>
+                                    <a asp-controller="Battalions" asp-action="Index" class="button-for-forces "><h3>Батальоны</h3></a>
+                                    <p>
+                                        <strong>Батальоны</strong>  - эта боевая единица (в данной версии сайта) не имеет подчинённых войск.
+                                        Кавалерия не имеет батальонов.
+                                        Отдельная бригада ВДВ может находиться в прямом подчинении корпуса.
+                                    </p>
+                                </li>
+                                <li>
+                                    <a asp-controller="Commanders" asp-action="Index" class="button-for-forces"><h3>Командиры</h3></a>
+                                    <p>
+                                        <strong>Командиры</strong>  - эта персоналии, которые могут относиться к любой военной части, но также связаны с временным промежутком.
+                                    </p>
+                                </li>
+                            </ul>
+                        </section>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <section id="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-8 col-12-medium">
+
+                        <!-- Links -->
+                        <section>
+                            <h2>Ссылки на важные ресурсы</h2>
+                            <div>
+                                <div class="row">
+                                    <div class="col-3 col-12-small">
+                                        <ul class="link-list last-child">
+                                            <li><a href="https://archive.mil.ru/archival_service/central/history.htm">ЦАМО РФ</a></li>
+                                            <li><a href="http://www.fsb.ru/fsb/supplement/archive.htm">Архив ФСБ</a></li>
+                                            <li><a href="http://rgaspi.org/">Архив социально-политической истории</a></li>
+                                            <li><a href="http://xn--80afqtm.xn--p1ai/category/tegi/tsk-kpss.shtml">Архив ЦК КПСС</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-3 col-12-small">
+                                        <ul class="link-list last-child">
+                                            <li><a href="http://podvignaroda.ru/?#tab=navHome">Подвиг народа</a></li>
+                                            <li><a href="http://www.rusarchives.ru/tegi/velikaya-otechestvennaya-voyna">Федеральное архивное агентство</a></li>
+                                            <li><a href="https://www.pobediteli.ru/">Победители</a></li>
+                                            <li><a href="http://june-22.mil.ru/">Проект "22 июня"</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-3 col-12-small">
+                                        <ul class="link-list last-child">
+                                            <li><a href="https://obd-memorial.ru/html/">Мемориал</a></li>
+                                            <li><a href="http://mil.ru/winner_may/docs.htm">Министерство Обороны РФ</a></li>
+                                            <li><a href="https://www.moypolk.ru/">Бессмертный полк</a></li>
+                                            <li><a href="https://ru.stsg.de/cms/dokstelle/content/o-tsentre/tsentr-dokumentatsii">Погибшие на территории ФРГ</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-3 col-12-small">
+                                        <ul class="link-list last-child">
+                                            <li><a href="http://www.pomnite-nas.ru/">Воинские захоронения</a></li>
+                                            <li><a href="https://www.permgaspi.ru/vplen/index.php?char=%25D0%2590">Архив на базе Пермского университета</a></li>
+                                            <li><a href="http://xn--b1afa8admefdd2c.xn--p1ai/izdat/ism.htm">Проект "Отечество"</a></li>
+                                            <li><a href="http://www.rkka.ru/imaps.htm">Военные карты</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                    </div>
+                    <div class="col-4 col-12-medium imp-medium">
+
+                        <!-- Blurb -->
+                        <section>
+                            <h2>Дополнительное уведомление</h2>
+                            <p>
+                                Если вы нашли некий новый ресурс, который вы можете порекомендовать для улучшения качества содержимого баз данных нашего сайта, просим вас сообщить ссылку на него администрации.
+                                Надеемся на плодотворное сотрудничество.
+                            </p>
+                        </section>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Copyright -->
+        <div id="copyright">
+            &copy; Untitled. All rights reserved. | Design: <a href="http://html5up.net">HTML5 UP</a>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets2/js/jquery.min.js"></script>
+    <script src="assets2/js/browser.min.js"></script>
+    <script src="assets2/js/breakpoints.min.js"></script>
+    <script src="assets2/js/util.js"></script>
+    <script src="assets2/js/main.js"></script>
+
+</body>
+</html>

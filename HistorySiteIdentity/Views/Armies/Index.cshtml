@@ -1,0 +1,63 @@
+﻿@model IEnumerable<HistorySiteIdentity.Models.Army>
+
+@{
+    ViewData["Title"] = "Список армий";
+}
+
+<h1>Армии</h1>
+
+<p>
+    <a asp-action="Create">Создать</a>
+</p>
+<form asp-controller="Armies" asp-action="Index" method="get">
+    <p>
+        Title: <input type="text" name="SearchString">
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Наименование
+            </th>
+            <th>
+                Номер
+            </th>
+            <th>
+                Общая численность
+            </th>
+            <th>
+                Дополнительная информация
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr class="trMod">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Number)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalStrenght)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AdditionalInformation)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ArmyId">Редактирование</a> |
+                    <a asp-action="Details" asp-route-id="@item.ArmyId">Описание</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ArmyId">Удаление</a>|
+                    <a asp-action="Copy" asp-route-id="@item.ArmyId">Копирование</a>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

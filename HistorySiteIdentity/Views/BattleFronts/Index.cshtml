@@ -1,0 +1,47 @@
+﻿@model IEnumerable<HistorySiteIdentity.Models.BattleFront>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Фронты</h1>
+
+<p>
+    <a asp-action="Create">Создание</a>
+</p>
+<form asp-controller="BattleFronts" asp-action="Index" method="get">
+    <p>
+        Title: <input type="text" name="SearchString">
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Наименование
+            </th>
+            <th>
+                Общая численность
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr class="trMod">
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalStrenght)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.BattleFrontId">Редактирование</a> |
+                <a asp-action="Details" asp-route-id="@item.BattleFrontId">Описание</a> |
+                <a asp-action="Delete" asp-route-id="@item.BattleFrontId">Удаление</a> |
+                <a asp-action="Copy" asp-route-id="@item.BattleFrontId">Копирование</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,161 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Инструкция по заполнению форм.</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="~/assets2/css/main.min.css" />
+    <link rel="stylesheet" href="~/assets2/css/main.css" />
+</head>
+<body class="subpage">
+    <div id="page-wrapper">
+
+        <!-- Header -->
+        <section id="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+
+                        <!-- Logo -->
+                        <h1><a asp-controller="Home" asp-action="Index" id="logo">Приветствие</a></h1>
+
+                        <!-- Nav -->
+                        <nav id="nav">
+                            <a asp-controller="Home" asp-action="MainIndex">Главная</a>
+                            <a asp-controller="Home" asp-action="ThreeColumn">Военные части</a>
+                            <a asp-controller="Home" asp-action="TwoColumn1">О проекте</a>
+                            <a asp-controller="Home" asp-action="TwoColumn2">Структура войск</a>
+                        </nav>
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content -->
+        <section id="content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+
+                        <!-- Main Content -->
+                        <section>
+                            <header>
+                                <h2>Инструкция.</h2>
+
+                                <h3 style="color:red">Прочтите внимательно!</h3>
+                            </header>
+                            <p>
+                                Прежде чем начать работу обратите внимание на несколько простых, 
+                                но очень важных правил. Их исполнение убережёт вас и ваших коллег от лишней работы и проблем, связанных с базами данных.
+                            </p>
+                            <p>
+                                Первое, на что следует вам обратить внимание, так это то, что сисетма хранения информации в базе данных строится от Момента времени.
+                                То есть, все созданные вами объекты ( военные части) должны быть ориентированны на чётко определённый промежуток времени. В данном случае используется: Неделя.
+                            </p>
+                            <p>
+                                Но не спешите создавать свою неделю. Сначала проверьте, не было ли создано этой нели ранее. Для этого воспользуйтесь поиском, имеющемся на общем листе.
+                            </p>
+                            <p>
+                                Вместе с тем вам предоставляется возможность редакции как своих объектов, так и чужих. Обратите внимание, что 
+                                <strong> при изменении недели все ссылки на подчинённые и связанные объекты (такие как полки, командиры) обнуляются! </strong> 
+                                их нужно создавать уже для новой недели и прикреплять к нужному объекту.
+                            </p>
+                            <p>
+                                Будьте внимательны и ответственны.
+                            </p>
+                        </section>
+                        <form class="form-inline" asp-controller="Home" asp-action="ThreeColumn">
+                            <button type="submit" class="button-large">Понятно</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <section id="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-8 col-12-medium">
+
+                        <!-- Links -->
+                        <section>
+                            <h2>Ссылки на важные ресурсы</h2>
+                            <div>
+                                <div class="row">
+                                    <div class="col-3 col-12-small">
+                                        <ul class="link-list last-child">
+                                            <li><a href="https://archive.mil.ru/archival_service/central/history.htm">ЦАМО РФ</a></li>
+                                            <li><a href="http://www.fsb.ru/fsb/supplement/archive.htm">Архив ФСБ</a></li>
+                                            <li><a href="http://rgaspi.org/">Архив социально-политической истории</a></li>
+                                            <li><a href="http://xn--80afqtm.xn--p1ai/category/tegi/tsk-kpss.shtml">Архив ЦК КПСС</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-3 col-12-small">
+                                        <ul class="link-list last-child">
+                                            <li><a href="http://podvignaroda.ru/?#tab=navHome">Подвиг народа</a></li>
+                                            <li><a href="http://www.rusarchives.ru/tegi/velikaya-otechestvennaya-voyna">Федеральное архивное агентство</a></li>
+                                            <li><a href="https://www.pobediteli.ru/">Победители</a></li>
+                                            <li><a href="http://june-22.mil.ru/">Проект "22 июня"</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-3 col-12-small">
+                                        <ul class="link-list last-child">
+                                            <li><a href="https://obd-memorial.ru/html/">Мемориал</a></li>
+                                            <li><a href="http://mil.ru/winner_may/docs.htm">Министерство Обороны РФ</a></li>
+                                            <li><a href="https://www.moypolk.ru/">Бессмертный полк</a></li>
+                                            <li><a href="https://ru.stsg.de/cms/dokstelle/content/o-tsentre/tsentr-dokumentatsii">Погибшие на территории ФРГ</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-3 col-12-small">
+                                        <ul class="link-list last-child">
+                                            <li><a href="http://www.pomnite-nas.ru/">Воинские захоронения</a></li>
+                                            <li><a href="https://www.permgaspi.ru/vplen/index.php?char=%25D0%2590">Архив на базе Пермского университета</a></li>
+                                            <li><a href="http://xn--b1afa8admefdd2c.xn--p1ai/izdat/ism.htm">Проект "Отечество"</a></li>
+                                            <li><a href="http://www.rkka.ru/imaps.htm">Военные карты</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                    </div>
+                    <div class="col-4 col-12-medium imp-medium">
+
+                        <!-- Blurb -->
+                        <section>
+                            <h2>Дополнительное уведомление</h2>
+                            <p>
+                                Если вы нашли некий новый ресурс, который вы можете порекомендовать для улучшения качества содержимого баз данных нашего сайта, просим вас сообщить ссылку на него администрации.
+                                Надеемся на плодотворное сотрудничество.
+                            </p>
+                        </section>
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Copyright -->
+        <div id="copyright">
+            &copy; Untitled. All rights reserved. | Design: <a href="http://html5up.net">HTML5 UP</a>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets2/js/jquery.min.js"></script>
+    <script src="assets2/js/browser.min.js"></script>
+    <script src="assets2/js/breakpoints.min.js"></script>
+    <script src="assets2/js/util.js"></script>
+    <script src="assets2/js/main.js"></script>
+
+</body>
+</html>
